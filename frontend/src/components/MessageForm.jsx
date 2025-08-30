@@ -14,7 +14,7 @@ const MessageForm = () => {
     try {
       await axios
         .post(
-          "http://localhost:5000/api/v1/message/send",
+          "http://localhost:4000/api/v1/message/send",
           { firstName, lastName, email, phone, message },
           {
             withCredentials: true,
@@ -74,7 +74,7 @@ const MessageForm = () => {
             onChange={(e) => setMessage(e.target.value)}
           />
           <div style={{ justifyContent: "center", alignItems: "center" }}>
-            <button type="submit">Send</button>
+            <button type="submit" >Send</button>
           </div>
         </form>
         <img src="/Vector.png" alt="vector" />

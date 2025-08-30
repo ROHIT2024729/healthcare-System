@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Appointment from "./Pages/Appointment";
 import AboutUs from "./Pages/AboutUs";
 import Register from "./Pages/Register";
+import HealthPrediction from "./Pages/healthPrediction";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { ToastContainer } from "react-toastify";
@@ -20,7 +21,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/v1/user/patient/me",
+          "http://localhost:4000/api/v1/user/patient/me",
           {
             withCredentials: true,
           }
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/healthPrediction" element={<HealthPrediction/>}/>
         </Routes>
         <Footer />
         <ToastContainer position="top-center" />
