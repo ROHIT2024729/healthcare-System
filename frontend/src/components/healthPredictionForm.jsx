@@ -16,6 +16,32 @@ const HealthPredictionForm = () => {
     useState("");
   const [thalassemia, setThalassemia] = useState("");
 
+  const handlePredictionFromFastApi = async(e) => {
+    e.preventDefault();
+    try {
+      const respone = await axios.post(
+        "https://heart-disease-predictor-ublz.onrender.com/predict",
+        {
+          data:{age,
+          sex,
+          chest_pain_type: chestPainType,
+          resting_blood_pressure: restingBloodPressure,
+          cholestoral,
+          Max_heart_rate: maxHeartRate,
+          exercise_induced_angina: exerciseInducedAngina,
+          oldpeak,
+          slope,
+          vessels_colored_by_flourosopy: vesselsColoredByFlourosopy,
+          thalassemia,}
+        }
+
+      )
+      console.log(respone)
+    } catch (error) {
+        return new Error("error getting respone from fastapi server")
+    }
+  }
+
   const handlePrediction = async (e) => {
     e.preventDefault();
     try {
@@ -147,7 +173,9 @@ const HealthPredictionForm = () => {
         </div>
 
         <button style={{ margin: "0 auto" }}>Predict</button>
+        
       </form>
+        <button style={{ margin: "0 auto" }} onClick={handlePredictionFromFastApi}>Predict FastApi</button>
     </div>
   );
 };
