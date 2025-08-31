@@ -21,6 +21,7 @@ app.use(
       "http://localhost:5173",
       "http://localhost:5174",
       "https://healthcare-system-34ir8d2g2-rohits-projects-175a9b0f.vercel.app",
+      "https://healthcare-system-o8os4gx5b-rohits-projects-175a9b0f.vercel.app",
     ],
     method: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
